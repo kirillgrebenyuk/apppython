@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\AppProject",
-    "\\AppProject\\AppProject"
+    "\\AppProject\\AppProject",
+    "\\AppProject\\AppProject\\assets",
+    "\\AppProject\\AppProject\\assets\\images"
   ],
-  "SelectedNode": "\\AppProject\\AppProject\\app.py",
+  "SelectedNode": "\\AppProject\\AppProject",
   "PreviewInSolutionExplorer": false
 }
