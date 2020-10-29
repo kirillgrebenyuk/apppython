@@ -43,6 +43,7 @@
     <Content Include="assets\custom-script.js" />
     <Content Include="assets\header.css" />
     <Content Include="assets\typography.css" />
+    <Content Include="assets\unnamed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
