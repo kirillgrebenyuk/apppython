@@ -38,12 +38,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\" />
-    <Folder Include="assets\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\custom-script.js" />
     <Content Include="assets\header.css" />
-    <Content Include="assets\images\unnamed.png" />
     <Content Include="assets\typography.css" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />

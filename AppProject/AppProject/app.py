@@ -18,7 +18,8 @@ df=pd.read_sql(query, con=cnn, parse_dates=['DATA_DATE'])
 cursor = cnn.cursor()
 cursor.execute(query)
 
-data_uri = base64.b64encode(open('Graph.png', 'rb').read()).decode('utf-8')
+data_uri = base64.b64encode(open('', 'rb').read()).decode('utf-8')
+print(data_uri)
 
 for row in cursor:
 	ch = row[0]
