@@ -3,6 +3,13 @@
     line-height: 60px;
     border-bottom: thin lightgrey solid;
 }
+.nav {
+    margin-top: 1%;
+    margin-left: 1%;
+}
+.nav-pills .nav-link.active {
+    background-color: #2968e8;
+}
 
 .app-header .app-header--title {
     font-size: 22px;
