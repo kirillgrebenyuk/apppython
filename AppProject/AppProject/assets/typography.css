@@ -12,3 +12,23 @@ table {
 table,th,td {
 	border: solid 1px black;
 }
+
+.TitleSite {
+    text-align:center;
+}
+
+.divZavod {
+    margin: 5px 0;
+    text-align: center;
+    columns: 500px 2;
+}
+
+.btnZavod {
+    border: solid 1px black;
+    margin: 20px 0;
+    transition:300ms;
+}
+
+.btnZavod:hover {
+    border: dotted 1px black;
+}

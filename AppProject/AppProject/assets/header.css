@@ -1,7 +1,7 @@
 .app-header {
     height: 60px;
     line-height: 60px;
-    border-bottom: thin lightgrey solid;
+    background-color: #2968e8
 }
 .nav {
     margin-top: 1%;

@@ -8,7 +8,6 @@ import pyodbc
 import datetime
 import plotly.graph_objs as go
 
-
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
@@ -45,7 +44,7 @@ def update_figure(start_date,end_date):
     dff = pd.read_sql_query(qsql,con=cnn)
     fig = px.line(dff, x="DATA_DATE", y="VALUE0", color="NAME", hover_name="NAME")
 
-    fig.update_layout(transition_duration=500)
+    #fig.update_layout(transition_duration=500)
 
     return fig
 #def sql(start_date,end_date):
