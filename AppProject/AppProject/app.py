@@ -22,39 +22,8 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.UNITED])
 app.title = "Система ИАС УЭР"           # Название сайта
 
 cnn = pyodbc.connect('DRIVER={SQL Server};PORT=port;SERVER=192.168.0.85;PORT=1433;DATABASE=Piramida2000;UID=sa;PWD=pswd')
-#date = '2020-10-29'
-#query = "SELECT dev.NAME,dat.PARNUMBER,dat.ITEM,dat.VALUE0,dat.VALUE1,dat.DATA_DATE FROM DATA as dat LEFT JOIN DEVICES as dev ON dat.OBJECT = dev.CODE WHERE dat.PARNUMBER = 12 AND dat.DATA_DATE > '"+date+"' AND (dat.OBJECT IN(4413)) AND dat.ITEM = 1 ORDER BY dat.DATA_DATE ASC"
-#df=pd.read_sql(query, con=cnn, parse_dates=['DATA_DATE'])
-
-#cursor = cnn.cursor()
-#cursor.execute(query)
-
-#data_uri = base64.b64encode(open('assets/unnamed.png', 'rb').read()).decode('utf-8')
-
-#for row in cursor:
-#	ch = row[0]
-#fig = px.line(df, x="DATA_DATE", y="VALUE0",color="NAME")
 
 body = html.Div([	
-    #-------------------------------------------
-    #html.Div(["Введите даты: ",
-    #          dcc.DatePickerRange(id='my-input', 
-    #                               min_date_allowed=datetime.date(2020, 1, 1),
-    #                               max_date_allowed=datetime.date(2020, 12, 1),
-    #                               start_date = datetime.date(2020,11, 1),
-    #                               end_date=datetime.date(2020, 11, 2))]),
-    #dcc.Graph(id='graph-with-slider'),
-    #-------------------------------------------
-    #dcc.Graph(
-    #    id='example-graph1',
-    #    figure=fig    
-    #),
-	#html.H4(children=ch),
-	#dt.DataTable(
-	#	data=df.to_dict('record'),
-	#	columns=[{'id': c, 'name': c} for c in df.columns],
-    #    page_size=10
-	#),
     html.H2('Потребление по всему заводу',id="button-clicks", className="TitleSite"),
     html.Div(className="divZavod",children=[
         #html.A(html.Img(src='data:image/png;base64,{}'.format(data_uri)), href='#zavod1'),
