@@ -2,7 +2,7 @@ import dash_bootstrap_components as dbc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
 
-PLOTLY_LOGO = "https://images.plot.ly/logo/new-branding/plotly-logomark.png"
+PLOTLY_LOGO = "http://orem.su/img/logo.png"
 
 search_bar = dbc.Row(
     [
@@ -24,8 +24,8 @@ def Navbar():
                         # Use row and col to control vertical alignment of logo / brand
                         dbc.Row(
                             [
-                                dbc.Col(html.Img(src=PLOTLY_LOGO, height="30px")),
-                                dbc.Col(dbc.NavbarBrand("Navbar", className="ml-2")),
+                                dbc.Col(html.Img(src=PLOTLY_LOGO, height="40px")),
+                                dbc.Col(dbc.NavbarBrand("АО «РЭС Групп»", className="ml-2")),
                             ],
                             align="center",
                             no_gutters=True,
@@ -33,7 +33,7 @@ def Navbar():
                         href="https://plot.ly",
                     ),
                     dbc.NavbarToggler(id="navbar-toggler"),
-                    dbc.Collapse(search_bar, id="navbar-collapse", navbar=True),
+                    #dbc.Collapse(search_bar, id="navbar-collapse", navbar=True),
                 ],
                 color="dark",
                 dark=True,
