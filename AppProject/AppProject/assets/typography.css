@@ -13,12 +13,28 @@ table,th,td {
 	border: solid 1px black;
 }
 
+/*---------Навигационная панель-----------*/
+
+.navMenu{
+    padding:0 30px;
+}
+.navMenuItem {
+    padding: 0 5px;
+    text-align: right;
+}
+/*----------------------------------------*/
+/*-----------Главная страница-------------*/
 .TitleSite {
     padding: 20px 0;
-    text-align:center;
+    text-align: center;
 }
 
-.divZavod {
+.Potreblenie {
+    font-size:16px;
+    font-weight:700;
+}
+
+.divZavod{
     margin: 5px 0;
     text-align: center;
     columns: 500px 2;
@@ -33,3 +49,4 @@ table,th,td {
 .btnZavod:hover {
     border: dotted 1px black;
 }
+/*----------------------------------------*/

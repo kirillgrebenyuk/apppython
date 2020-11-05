@@ -1,8 +1,16 @@
-import dash_bootstrap_components as dbc
 import dash_html_components as html
+import dash_core_components as dcc
+import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 
 PLOTLY_LOGO = "http://orem.su/img/logo.png"
+
+theme =  {
+    'dark': True,
+    'detail': '#007439',
+    'primary': '#00EA64',
+    'secondary': '#6E6E6E',
+}
 
 search_bar = dbc.Row(
     [
@@ -34,8 +42,26 @@ def Navbar():
                     ),
                     dbc.NavbarToggler(id="navbar-toggler"),
                     #dbc.Collapse(search_bar, id="navbar-collapse", navbar=True),
+                    dbc.Collapse([
+                        dbc.Row([
+                                dbc.Col( 
+                                    dbc.DropdownMenu(
+                                    label="Menu",
+                                    children=[
+                                        dbc.DropdownMenuItem("Настройки"),
+                                        dbc.DropdownMenuItem("О системе"),
+                                        dbc.DropdownMenuItem("Справка"),
+                                        ],
+                                    right=True
+                                    )),
+                                   ],
+                                no_gutters=True,
+                                className="ml-auto flex-nowrap mt-3 mt-md-0"
+                                )],
+                            id="navbar-collapse", 
+                            navbar=True)
                 ],
-                color="dark",
+                color=theme['secondary'],
                 dark=True,
             )
     return navbar
