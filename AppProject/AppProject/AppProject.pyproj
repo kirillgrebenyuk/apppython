@@ -33,6 +33,15 @@
     <Compile Include="app.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="module1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="module2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app2.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PagesApp.py" />
     <Compile Include="app1.py">
       <SubType>Code</SubType>
@@ -49,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\custom-script.js" />
+    <Content Include="assets\favicon.ico" />
     <Content Include="assets\header.css" />
     <Content Include="assets\typography.css" />
     <Content Include="assets\unnamed.png" />

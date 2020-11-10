@@ -22,7 +22,18 @@ table,th,td {
     padding: 0 5px;
     text-align: right;
 }
+.MenuButton {
+    color:#ffffff;
+}
 /*----------------------------------------*/
+
+/*-------------Левая панель--------------*/
+.sidebar_style {
+    height:100%;
+    padding: 2rem 1rem;
+    background-color: #f8f9fa;
+}
+
 /*-----------Главная страница-------------*/
 .TitleSite {
     padding: 20px 0;
@@ -50,3 +61,11 @@ table,th,td {
     border: dotted 1px black;
 }
 /*----------------------------------------*/
+.grafPage1 {
+    height: 450px;
+    text-align: center;
+    vertical-align: middle;
+}
+.loadingStyle {
+    padding-top:400px;
+}

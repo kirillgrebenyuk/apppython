@@ -28,7 +28,7 @@ search_bar = dbc.Row(
 def Navbar():
     navbar = dbc.Navbar(
                 [
-                    html.A(
+                    dcc.Link(
                         # Use row and col to control vertical alignment of logo / brand
                         dbc.Row(
                             [
@@ -38,7 +38,7 @@ def Navbar():
                             align="center",
                             no_gutters=True,
                         ),
-                        href="https://plot.ly",
+                        href="/",
                     ),
                     dbc.NavbarToggler(id="navbar-toggler"),
                     #dbc.Collapse(search_bar, id="navbar-collapse", navbar=True),
@@ -48,11 +48,12 @@ def Navbar():
                                     dbc.DropdownMenu(
                                     label="Menu",
                                     children=[
-                                        dbc.DropdownMenuItem("Настройки"),
-                                        dbc.DropdownMenuItem("О системе"),
-                                        dbc.DropdownMenuItem("Справка"),
+                                        dcc.Link(dbc.DropdownMenuItem("Настройки"),href="/setting"),
+                                        dcc.Link(dbc.DropdownMenuItem("О системе"),href="/about"),
+                                        dcc.Link(dbc.DropdownMenuItem("Справка"),href="/help"),
                                         ],
-                                    right=True
+                                    right=True,
+                                    className="MenuButton"
                                     )),
                                    ],
                                 no_gutters=True,
@@ -62,8 +63,30 @@ def Navbar():
                             navbar=True)
                 ],
                 color=theme['secondary'],
-                dark=True,
+                dark=True
             )
     return navbar
  
+def Sidebar():
+    sidebar = html.Div(
+        [
+            html.H2("Sidebar", className="display-4"),
+            html.Hr(),
+            html.P(
+                 "A simple sidebar layout with navigation links", className="lead"
+            ),
+            dbc.Nav(
+               [
+                    dbc.NavLink("ЛГОК", href="/page-1", id="page-1-link"),
+                    dbc.NavLink("МГОК", href="/page-2", id="page-2-link"),
+                    dbc.NavLink("ОЭМК", href="/page-3", id="page-3-link"),
+                    dbc.NavLink("Уральская сталь", href="/page-4", id="page-4-link"),
+               ],
+               vertical=True,
+               pills=True,
+            ),
+        ],
+        className="sidebar_style"
+    )
+    return sidebar
             
