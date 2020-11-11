@@ -29,22 +29,22 @@ app.title = "Система ИАС УЭР"           # Название сайт
 cnn = pyodbc.connect('DRIVER={SQL Server};PORT=port;SERVER=192.168.0.85;PORT=1433;DATABASE=Piramida2000;UID=sa;PWD=pswd')  #Подключение к БД
 
 LGOK = '4407,4408,4409,4410,4411,4412,4413,4414'
-MGOK = '4418,4407,4408,4409,4410,4411,4412,4413,4415'
-OEMK = '4417,4414,4415,4417'
-YSTAL = '4418,4369,4413,4414,4415'
+#MGOK = '4418,4407,4408,4409,4410,4411,4412,4413,4415'
+#OEMK = '4417,4414,4415,4417'
+#YSTAL = '4418,4369,4413,4414,4415'
 
 sqlsummaLGOK = "SELECT SUM(VALUE0)as Summa FROM DATA as dat LEFT JOIN DEVICES as dev ON dat.OBJECT = dev.CODE WHERE dat.PARNUMBER = 12 AND (dat.DATA_DATE > '01-01-2020' AND dat.DATA_DATE < '11-01-2020')AND OBJECT IN ("+LGOK+") AND dat.ITEM = 1"
-sqlsummaMGOK = "SELECT SUM(VALUE0)as Summa FROM DATA as dat LEFT JOIN DEVICES as dev ON dat.OBJECT = dev.CODE WHERE dat.PARNUMBER = 12 AND (dat.DATA_DATE > '01-01-2020' AND dat.DATA_DATE < '11-01-2020')AND OBJECT IN ("+MGOK+") AND dat.ITEM = 1"
-sqlsummaOEMK = "SELECT SUM(VALUE0)as Summa FROM DATA as dat LEFT JOIN DEVICES as dev ON dat.OBJECT = dev.CODE WHERE dat.PARNUMBER = 12 AND (dat.DATA_DATE > '01-01-2020' AND dat.DATA_DATE < '11-01-2020')AND OBJECT IN ("+OEMK+") AND dat.ITEM = 1"
-sqlsummaYSTAL = "SELECT SUM(VALUE0)as Summa FROM DATA as dat LEFT JOIN DEVICES as dev ON dat.OBJECT = dev.CODE WHERE dat.PARNUMBER = 12 AND (dat.DATA_DATE > '01-01-2020' AND dat.DATA_DATE < '11-01-2020')AND OBJECT IN ("+YSTAL+") AND dat.ITEM = 1"
+#sqlsummaMGOK = "SELECT SUM(VALUE0)as Summa FROM DATA as dat LEFT JOIN DEVICES as dev ON dat.OBJECT = dev.CODE WHERE dat.PARNUMBER = 12 AND (dat.DATA_DATE > '01-01-2020' AND dat.DATA_DATE < '11-01-2020')AND OBJECT IN ("+MGOK+") AND dat.ITEM = 1"
+#sqlsummaOEMK = "SELECT SUM(VALUE0)as Summa FROM DATA as dat LEFT JOIN DEVICES as dev ON dat.OBJECT = dev.CODE WHERE dat.PARNUMBER = 12 AND (dat.DATA_DATE > '01-01-2020' AND dat.DATA_DATE < '11-01-2020')AND OBJECT IN ("+OEMK+") AND dat.ITEM = 1"
+#sqlsummaYSTAL = "SELECT SUM(VALUE0)as Summa FROM DATA as dat LEFT JOIN DEVICES as dev ON dat.OBJECT = dev.CODE WHERE dat.PARNUMBER = 12 AND (dat.DATA_DATE > '01-01-2020' AND dat.DATA_DATE < '11-01-2020')AND OBJECT IN ("+YSTAL+") AND dat.ITEM = 1"
 cursor = cnn.cursor().execute(sqlsummaLGOK)
 for row in cursor:summaLGOK = row[0]
-cursor = cnn.cursor().execute(sqlsummaMGOK)
-for row in cursor:summaMGOK = row[0]
-cursor = cnn.cursor().execute(sqlsummaOEMK)
-for row in cursor:summaOEMK = row[0]
-cursor = cnn.cursor().execute(sqlsummaYSTAL)
-for row in cursor:summaYSTAL = row[0]
+#cursor = cnn.cursor().execute(sqlsummaMGOK)
+#for row in cursor:summaMGOK = row[0]
+#cursor = cnn.cursor().execute(sqlsummaOEMK)
+#for row in cursor:summaOEMK = row[0]
+#cursor = cnn.cursor().execute(sqlsummaYSTAL)
+#for row in cursor:summaYSTAL = row[0]
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
@@ -63,14 +63,15 @@ index_page = html.Div([
     html.P(str(ceil(summaLGOK))+' кВт*ч',className="Potreblenie"),
     dcc.Link(html.Img(src='assets/unnamed.png', id='image-btn-lgok', className="btnZavod", n_clicks = 0), href='/page-1'),
     
-    html.P(str(ceil(summaMGOK))+' кВт*ч',className="Potreblenie"),
-    dcc.Link(html.Img(src='assets/unnamed.png', id='image-btn-lgok', className="btnZavod", n_clicks = 0), href='/page-2'),
+    #html.P(str(ceil(summaMGOK))+' кВт*ч',className="Potreblenie"),
+    #dcc.Link(html.Img(src='assets/unnamed.png', id='image-btn-lgok', className="btnZavod", n_clicks = 0), href='/page-2'),
     
-    html.P(str(ceil(summaOEMK))+' кВт*ч',className="Potreblenie"),
-    dcc.Link(html.Img(src='assets/unnamed.png', id='image-btn-lgok', className="btnZavod", n_clicks = 0), href='/page-3'),
+    #html.P(str(ceil(summaOEMK))+' кВт*ч',className="Potreblenie"),
+    #dcc.Link(html.Img(src='assets/unnamed.png', id='image-btn-lgok', className="btnZavod", n_clicks = 0), href='/page-3'),
     
-    html.P(str(ceil(summaYSTAL))+' кВт*ч',className="Potreblenie"),
-    dcc.Link(html.Img(src='assets/unnamed.png', id='image-btn-lgok', className="btnZavod", n_clicks = 0), href='/page-4')]),
+    #html.P(str(ceil(summaYSTAL))+' кВт*ч',className="Potreblenie"),
+    #dcc.Link(html.Img(src='assets/unnamed.png', id='image-btn-lgok', className="btnZavod", n_clicks = 0), href='/page-4')
+    ]),
     #html.Br(),
     #dcc.Link('Go to Page 2', href='/page-2'),
 ])
@@ -152,33 +153,6 @@ page_3_layout = html.Div([
     dcc.Link('Go back to home', href='/')
 ])
 
-
-#------------------
-def create_tooltip(cell):
-    try:
-        num = float(cell)
-        return textwrap.dedent(
-            '''
-            Tooltip for value **{value:+.2f}**.
-            | Multiplier | Value |  Percent |
-            |-------|-------|---------------|
-            | 1     | {value_1:+.2f}     | {value_1:+.2f}% |
-            | 2     | {value_2:+.2f}     | {value_2:+.2f}% |
-            | 3     | {value_3:+.2f}     | {value_3:+.2f}% |
-            '''.format(
-                value=num,
-                value_1=num,
-                value_2=num * 2,
-                value_3=num * 3
-            )
-        )
-    except:
-        return textwrap.dedent(
-            '''
-            Tooltip: **{value}**.
-            '''.format(value=cell)
-        )
-
 page_4_layout = html.Div([
     html.H1('Уральская сталь'),
     html.Div(id='page-4-content'),
@@ -188,7 +162,7 @@ page_4_layout = html.Div([
     dcc.Link('Go back to home', href='/')
 ])
 
-page_5_layout = html.Div([
+page_setting = html.Div([
     html.H1('Настройки'),
     html.Div(id='setting-content'),
     html.Br(),
@@ -197,7 +171,7 @@ page_5_layout = html.Div([
     dcc.Link('Go back to home', href='/')
 ])
 
-page_6_layout = html.Div([
+page_help = html.Div([
     html.H1('О системе'),
     html.Div(id='about-content'),
     html.Br(),
@@ -206,7 +180,7 @@ page_6_layout = html.Div([
     dcc.Link('Go back to home', href='/')
 ])
 
-page_7_layout = html.Div([
+page_about = html.Div([
     html.H1('Справка'),
     html.Div(id='help-content'),
     html.Br(),
@@ -243,11 +217,11 @@ def display_page(pathname):
     elif pathname == '/page-4':
         return page_4_layout
     elif pathname == '/setting':
-        return page_5_layout
+        return page_setting
     elif pathname == '/about':
-        return page_6_layout
+        return page_help
     elif pathname == '/help':
-        return page_7_layout
+        return page_about
     else:
         return dbc.Jumbotron(
             [

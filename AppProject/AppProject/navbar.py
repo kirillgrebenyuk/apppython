@@ -3,7 +3,7 @@ import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 
-PLOTLY_LOGO = "http://orem.su/img/logo.png"
+PLOTLY_LOGO = "https://www.metalloinvest.com/_v/_i/152.png"
 
 theme =  {
     'dark': True,

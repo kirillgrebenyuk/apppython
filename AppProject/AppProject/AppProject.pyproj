@@ -29,24 +29,30 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="app%28backup%29.py" />
-    <Compile Include="app.py">
+    <Compile Include="test\app%28backup%29.py" />
+    <Compile Include="test\app.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="module1.py">
+    <Compile Include="test\module1.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="module2.py">
+    <Compile Include="test\module2.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="app2.py">
+    <Compile Include="test\app2.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PagesApp.py" />
-    <Compile Include="app1.py">
+    <Compile Include="test\app1.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="navbar.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test\FadeTest.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test\module3.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -55,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\" />
+    <Folder Include="test\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\custom-script.js" />
