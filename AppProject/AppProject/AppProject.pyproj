@@ -6,7 +6,7 @@
     <ProjectGuid>a318749d-ff1a-4be3-9cb3-d0fc878f364c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <ProjectTypeGuids>{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
-    <StartupFile>oldSite\PagesApp.py</StartupFile>
+    <StartupFile>index.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -29,6 +29,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="index.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="navbar.py" />
     <Compile Include="test\app%28backup%29.py" />
     <Compile Include="test\app.py">
       <SubType>Code</SubType>
@@ -42,11 +46,11 @@
     <Compile Include="test\app2.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="oldSite\PagesApp.py" />
+    <Compile Include="oldSite\PagesApp1.py" />
     <Compile Include="test\app1.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="oldSite\navbar.py">
+    <Compile Include="oldSite\navbar1.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="test\FadeTest.py">
@@ -63,17 +67,21 @@
     <InterpreterReference Include="Global|PythonCore|3.6" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets\" />
     <Folder Include="oldSite\" />
     <Folder Include="test\" />
     <Folder Include="test\assets\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="oldSite\custom-script.js" />
-    <Content Include="oldSite\favicon.ico" />
-    <Content Include="oldSite\header.css" />
+    <Content Include="assets\favicon.ico" />
+    <Content Include="assets\style.css" />
+    <Content Include="assets\unnamed.png" />
+    <Content Include="oldSite\custom-script1.js" />
+    <Content Include="oldSite\favicon1.ico" />
+    <Content Include="oldSite\header1.css" />
     <Content Include="test\assets\css3.css" />
-    <Content Include="oldSite\typography.css" />
-    <Content Include="oldSite\unnamed.png" />
+    <Content Include="oldSite\typography1.css" />
+    <Content Include="oldSite\unnamed1.png" />
     <Content Include="test\assets\custom-script.js" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
