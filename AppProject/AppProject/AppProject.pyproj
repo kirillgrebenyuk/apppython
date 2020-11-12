@@ -6,7 +6,7 @@
     <ProjectGuid>a318749d-ff1a-4be3-9cb3-d0fc878f364c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <ProjectTypeGuids>{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
-    <StartupFile>PagesApp.py</StartupFile>
+    <StartupFile>oldSite\PagesApp.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -42,11 +42,11 @@
     <Compile Include="test\app2.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PagesApp.py" />
+    <Compile Include="oldSite\PagesApp.py" />
     <Compile Include="test\app1.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="navbar.py">
+    <Compile Include="oldSite\navbar.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="test\FadeTest.py">
@@ -55,20 +55,26 @@
     <Compile Include="test\module3.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="test\css3.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.6" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\" />
+    <Folder Include="oldSite\" />
     <Folder Include="test\" />
+    <Folder Include="test\assets\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\custom-script.js" />
-    <Content Include="assets\favicon.ico" />
-    <Content Include="assets\header.css" />
-    <Content Include="assets\typography.css" />
-    <Content Include="assets\unnamed.png" />
+    <Content Include="oldSite\custom-script.js" />
+    <Content Include="oldSite\favicon.ico" />
+    <Content Include="oldSite\header.css" />
+    <Content Include="test\assets\css3.css" />
+    <Content Include="oldSite\typography.css" />
+    <Content Include="oldSite\unnamed.png" />
+    <Content Include="test\assets\custom-script.js" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 

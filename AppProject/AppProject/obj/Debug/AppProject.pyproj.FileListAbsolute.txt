@@ -1,0 +1,1 @@
+C:\Users\grebenyuk\django\AppProject\AppProject\obj\Debug\AppProject.pyproj.CoreCompileInputs.cache
