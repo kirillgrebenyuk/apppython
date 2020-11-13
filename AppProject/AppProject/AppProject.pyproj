@@ -62,6 +62,9 @@
     <Compile Include="test\css3.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="test\sqlGraph.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.6" />

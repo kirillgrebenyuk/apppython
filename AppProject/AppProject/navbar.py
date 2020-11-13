@@ -25,7 +25,7 @@ def Navbar():
                         ),
                         href="/",
                     ),
-                    dbc.NavbarToggler(id="navbar-toggler"),
+                    dbc.NavbarToggler(id="navbar-toggler")
                     #dbc.Collapse(search_bar, id="navbar-collapse", navbar=True)
                 ], 
                 className="navbar_style",
@@ -49,7 +49,7 @@ def Sidebar():
                     dbc.NavLink("Мнемосхема", href="/page-4", id="page-4-link"),
                ],
                vertical=True,
-               pills=True,
+               pills=True
             ),
         ],
         className="sidebar_style"
